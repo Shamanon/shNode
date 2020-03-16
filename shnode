@@ -22,7 +22,7 @@ def dataView(mod_folder):
 
 # collect and concatinate data
 def dataXML(mod_folder):
-	folders = glob.glob(mod_folder+'/shNode.*')
+	folders = glob.glob(mod_folder+'/modules/shNode.*')
 	data = '{\'shNode\': {'
 	for i in folders:
 		proc = subprocess.Popen(i+'/data', stdout=subprocess.PIPE)
@@ -51,7 +51,7 @@ def logView():
 
 # do the business
 # available command line options
-args = { '-x': 'XML Output', '-r': 'List Output', '-l': 'Display Log', '-s': 'Log Data' }
+args = { '-x': 'Output XML', '-r': 'Output List', '-l': 'Display Log', '-s': 'Log Data' }
 
 # run the functions according to options
 if len(sys.argv) == 2 and sys.argv[1] in args:
