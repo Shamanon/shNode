@@ -1,10 +1,14 @@
 #!/usr/bin/python
 
-# shNode Smart Home Node Applicationta
+# shNode Smart Home Node Applicationt
 # Joshua Besneatte http://github.com/shamanon/shNode
 
 # This program performs the following actions:
-# Parse all module data
+# Parse all module data in XML or List format
+# Write Module data to log
+# Read Log to stdout
+
+# To Do
 # Send commands to extensions
 
 import jxmlease, glob, subprocess, sys, time
