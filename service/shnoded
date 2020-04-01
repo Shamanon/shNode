@@ -1,0 +1,29 @@
+#!/usr/bin/python3
+
+# Smart Home Node Service Daemon
+
+
+# import daemon
+
+# from spam import do_main_program
+
+# with daemon.DaemonContext():
+    # do_main_program()
+
+import socket
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind(("localhost", 9988))
+s.listen(1)
+
+timer = 0
+server = False
+ 
+while True:
+    conn, addr = s.accept()
+    data = conn.recv(1024)
+    conn.close()
+    if timer == 300:
+        proc = subprocess.Popen('/usr/local/bin/shnode -l', stdout=subprocess.PIPE)
+        output = output+str(proc.stdout.read())
+        timer = 0
+    
